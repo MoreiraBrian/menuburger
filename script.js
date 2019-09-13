@@ -17,8 +17,10 @@ var sm1 = document.getElementById("sm1");
 var sm2 = document.getElementById("sm2");
 var sm3 = document.getElementById("sm3");
 var sm4 = document.getElementById("sm4");
-
-
+var ss1 = document.getElementById("ss1");
+var ss2 = document.getElementById("ss2");
+var ss3 = document.getElementById("ss3");
+var ss4 = document.getElementById("ss4");
 
 // For open the menu
 function mouv(x) {
@@ -133,17 +135,52 @@ cross.addEventListener("click", function() {
         }, 500);
     }, 500);
 })
+ss1.addEventListener("mouseover", function() {
+    red.style.opacity = "0.99999";
+    ss2.style.opacity = "0.5";
+    ss3.style.opacity = "0.5";
+    ss4.style.opacity = "0.5";
+})
+ss1.addEventListener("mouseout", function() {
+    red.style.opacity = "1";
+    ss2.style.opacity = "1";
+    ss3.style.opacity = "1";
+    ss4.style.opacity = "1";
+})
 
-// sm2.addEventListener("mouseover", function() {
-// document.getElementById("apropos").style.display = "block";
-// document.getElementById("apropos").style.zIndex = "-2"
-// sm2.animate([
-// { transform: "translateX(0)" },
-// { transform: "translateX(30px)" },
-// 
-// ], { duration: 300 });
-// 
-// document.getElementById("2").style.zIndex = "3";
-// document.getElementById("1").style.zIndex = "-1";
-// red.style.opacity = "0.99999";
-// })
+ss2.addEventListener("mouseover", function() {
+    red.style.opacity = "0.99999";
+    ss1.style.opacity = "0.5";
+    ss3.style.opacity = "0.5";
+    ss4.style.opacity = "0.5";
+})
+ss2.addEventListener("mouseout", function() {
+    red.style.opacity = "1";
+    ss1.style.opacity = "1";
+    ss3.style.opacity = "1";
+    ss4.style.opacity = "1";
+})
+ss3.addEventListener("mouseover", function() {
+    red.style.opacity = "0.99999";
+    ss1.style.opacity = "0.5";
+    ss2.style.opacity = "0.5";
+    ss4.style.opacity = "0.5";
+})
+ss3.addEventListener("mouseout", function() {
+    red.style.opacity = "1";
+    ss1.style.opacity = "1";
+    ss2.style.opacity = "1";
+    ss4.style.opacity = "1";
+})
+ss4.addEventListener("mouseover", function() {
+    red.style.opacity = "0.99999";
+    ss1.style.opacity = "0.5";
+    ss2.style.opacity = "0.5";
+    ss3.style.opacity = "0.5";
+})
+ss4.addEventListener("mouseout", function() {
+    red.style.opacity = "1";
+    ss1.style.opacity = "1";
+    ss2.style.opacity = "1";
+    ss3.style.opacity = "1";
+})
