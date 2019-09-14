@@ -1,9 +1,13 @@
 var cross1 = document.getElementById("cross1");
 var cross2 = document.getElementById("cross2");
+var cross1bis = document.getElementById("cross1bis");
+var cross2bis = document.getElementById("cross2bis");
 var firstline = document.getElementById("firstline");
 var secondline = document.getElementById("secondline");
 var bouton = document.getElementById("line");
+var bouton2 = document.getElementById("line2");
 var cross = document.getElementById("cross");
+var crossbis = document.getElementById("crossbis");
 var blanc = document.getElementById("second");
 var red = document.getElementById("red");
 var lang0 = document.getElementById("langue");
@@ -21,6 +25,7 @@ var ss1 = document.getElementById("ss1");
 var ss2 = document.getElementById("ss2");
 var ss3 = document.getElementById("ss3");
 var ss4 = document.getElementById("ss4");
+var x = window.matchMedia("(max-width: 1000px)")
 
 // For open the menu
 function mouv(x) {
@@ -33,50 +38,79 @@ function mouv(x) {
 
 
 bouton.addEventListener("click", function() {
-    bouton.style.display = "none";
-    blanc.style.display = "block";
-    cross.style.display = "block";
-    blanc.animate([
-        { transform: "translate(100%)" },
-        { transform: "translate(0)" }
-    ], { duration: 100 });
-    cross1.animate([
-        { transform: "rotate(0deg)" },
-        { transform: "rotate(45deg)" },
-    ], { duration: 100 })
+    if (x.matches) {
+        bouton.style.display = "none";
+        cross.style.display = "block";
+        cross1.animate([
+            { transform: "rotate(0deg)" },
+            { transform: "rotate(45deg)" },
+        ], { duration: 100 })
 
-    cross2.animate([
-        { transform: "rotate(0deg)" },
-        { transform: "rotate(-45deg)" },
-    ], { duration: 100 });
-    setTimeout(function() {
-        hr.style.display = "block";
-        hr.animate([
-            { transform: "scaleX(0)" },
-            { transform: "scaleX(1)" }
-        ], { duration: 400 });
-        select.style.display = "flex";
-        mouv(lang0);
-        mouv(lang1);
-        mouv(lang2);
-        mouv(lang3);
-        red.style.display = "block";
+        cross2.animate([
+            { transform: "rotate(0deg)" },
+            { transform: "rotate(-45deg)" },
+        ], { duration: 100 });
         setTimeout(function() {
-            sousmenu.style.display = "block";
-            mouv(sm4);
-            mouv(sm1);
-            mouv(sm2);
-            mouv(sm3);
-        }, 300);
-        red.animate([
-            { transform: "translateX(100%)" },
-            { transform: "translateX(0%)" },
-        ], { duration: 500 })
-    }, 100);
+            red.style.display = "block";
+            setTimeout(function() {
+                sousmenu.style.display = "block";
+                mouv(sm4);
+                mouv(sm1);
+                mouv(sm2);
+                mouv(sm3);
+            }, 300);
+            red.animate([
+                { transform: "translateX(100%)" },
+                { transform: "translateX(0%)" },
+            ], { duration: 500 })
+        }, 100);
+    } else {
 
+        bouton.style.display = "none";
+        blanc.style.display = "block";
+        cross.style.display = "block";
+        blanc.animate([
+            { transform: "translate(100%)" },
+            { transform: "translate(0)" }
+        ], { duration: 100 });
+        cross1.animate([
+            { transform: "rotate(0deg)" },
+            { transform: "rotate(45deg)" },
+        ], { duration: 100 })
 
+        cross2.animate([
+            { transform: "rotate(0deg)" },
+            { transform: "rotate(-45deg)" },
+        ], { duration: 100 });
+        setTimeout(function() {
+            hr.style.display = "block";
+            hr.animate([
+                { transform: "scaleX(0)" },
+                { transform: "scaleX(1)" }
+            ], { duration: 400 });
+            select.style.display = "flex";
+            mouv(lang0);
+            mouv(lang1);
+            mouv(lang2);
+            mouv(lang3);
+            red.style.display = "block";
+            setTimeout(function() {
+                sousmenu.style.display = "block";
+                mouv(sm4);
+                mouv(sm1);
+                mouv(sm2);
+                mouv(sm3);
+            }, 300);
+            red.animate([
+                { transform: "translateX(100%)" },
+                { transform: "translateX(0%)" },
+            ], { duration: 500 })
+        }, 100);
+
+    }
 
 });
+
 
 // For close the menu
 function closemouv(x) {
@@ -135,6 +169,8 @@ cross.addEventListener("click", function() {
         }, 500);
     }, 500);
 })
+
+
 ss1.addEventListener("mouseover", function() {
     red.style.opacity = "0.99999";
     ss2.style.opacity = "0.5";
